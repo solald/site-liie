@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-label="Illustration abstraite : table de radiologie interventionnelle, arceau fluoroscopique et arborescence vasculaire">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFFDF8"/>
+      <stop offset="100%" stop-color="#F1E9DA"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#B85340" stop-opacity="0.22"/>
+      <stop offset="60%" stop-color="#B85340" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="gold" cx="0.2" cy="0.9" r="0.6">
+      <stop offset="0%" stop-color="#C29A3A" stop-opacity="0.20"/>
+      <stop offset="100%" stop-color="#C29A3A" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#1B2333" stroke-opacity="0.04" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <!-- fond crème + halos -->
+  <rect width="400" height="500" fill="url(#bg)"/>
+  <rect width="400" height="500" fill="url(#grid)"/>
+  <rect width="400" height="500" fill="url(#glow)"/>
+  <rect width="400" height="500" fill="url(#gold)"/>
+
+  <!-- arceau fluoroscopique stylisé (C-arm) -->
+  <g stroke="#1B2333" stroke-opacity="0.55" fill="none" stroke-linecap="round">
+    <!-- arc principal -->
+    <path d="M 120 80 Q 60 250 120 420" stroke-width="2.2"/>
+    <!-- tête émettrice haut -->
+    <rect x="96" y="66" width="48" height="28" rx="4" fill="#1B2333" fill-opacity="0.88" stroke="none"/>
+    <circle cx="120" cy="80" r="3" fill="#B85340" stroke="none"/>
+    <!-- détecteur bas -->
+    <rect x="96" y="406" width="48" height="28" rx="4" fill="#1B2333" fill-opacity="0.88" stroke="none"/>
+    <circle cx="120" cy="420" r="3" fill="#B85340" stroke="none"/>
+    <!-- rail support -->
+    <line x1="52" y1="250" x2="32" y2="250" stroke-width="2.2"/>
+    <circle cx="32" cy="250" r="5" fill="#1B2333" fill-opacity="0.55" stroke="none"/>
+  </g>
+
+  <!-- table radiotransparente (perspective légère) -->
+  <g>
+    <line x1="140" y1="260" x2="380" y2="245" stroke="#1B2333" stroke-opacity="0.35" stroke-width="2"/>
+    <line x1="140" y1="285" x2="380" y2="270" stroke="#1B2333" stroke-opacity="0.18" stroke-width="1.5"/>
+    <line x1="160" y1="265" x2="160" y2="340" stroke="#1B2333" stroke-opacity="0.30" stroke-width="1.8"/>
+    <line x1="360" y1="248" x2="360" y2="328" stroke="#1B2333" stroke-opacity="0.30" stroke-width="1.8"/>
+  </g>
+
+  <!-- arborescence vasculaire éditoriale (arbre artériel stylisé) -->
+  <g stroke="#B85340" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- tronc principal -->
+    <path d="M 240 258 C 250 230 242 200 258 170 S 280 120 268 90" stroke-width="2.4" stroke-opacity="0.85"/>
+    <!-- branches -->
+    <path d="M 256 180 C 280 172 300 170 320 158" stroke-width="1.8" stroke-opacity="0.70"/>
+    <path d="M 320 158 C 340 152 352 148 360 140" stroke-width="1.4" stroke-opacity="0.55"/>
+    <path d="M 320 158 C 330 172 338 186 340 200" stroke-width="1.2" stroke-opacity="0.45"/>
+    <path d="M 258 210 C 238 200 220 200 200 195" stroke-width="1.6" stroke-opacity="0.60"/>
+    <path d="M 200 195 C 182 194 170 200 158 210" stroke-width="1.2" stroke-opacity="0.45"/>
+    <path d="M 252 148 C 270 138 280 128 280 115" stroke-width="1.4" stroke-opacity="0.55"/>
+
+    <!-- cathéter qui remonte (pointillé ivoire sur rouge) -->
+    <path d="M 240 258 C 250 230 242 200 258 170 S 275 135 278 105"
+          stroke="#FFFDF8" stroke-width="1.2" stroke-opacity="0.9"
+          stroke-dasharray="3 4"/>
+    <!-- point d'injection -->
+    <circle cx="278" cy="105" r="4.5" fill="#B85340" stroke="none"/>
+    <circle cx="278" cy="105" r="9" fill="none" stroke="#B85340" stroke-opacity="0.35" stroke-width="1.2"/>
+  </g>
+
+  <!-- réticule fluoroscopique discret -->
+  <g stroke="#1B2333" stroke-opacity="0.15" fill="none">
+    <circle cx="278" cy="105" r="60"/>
+    <line x1="218" y1="105" x2="338" y2="105" stroke-dasharray="2 4"/>
+    <line x1="278" y1="45"  x2="278" y2="165" stroke-dasharray="2 4"/>
+  </g>
+
+  <!-- légende typographique discrète -->
+  <g font-family="Fraunces, 'Source Serif Pro', Georgia, serif" fill="#1B2333" fill-opacity="0.45">
+    <text x="28" y="472" font-size="11" font-style="italic">Plateau technique · LIIE · CERIMED</text>
+  </g>
+</svg>

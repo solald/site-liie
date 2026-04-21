@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1100" role="img" aria-labelledby="titleId descId">
+<title id="titleId">Boucle translationnelle du LIIE</title>
+<desc id="descId">Schéma circulaire de la boucle translationnelle du LIIE : problème clinique, question de recherche, projet scientifique, validation préclinique, retour au patient.</desc>
+<style>
+.ink{fill:#0E1116}.mute{fill:#6B7280}.dim{fill:#9CA2AC}.accent{fill:#C84C38}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace}
+.sans{font-family:"Inter",-apple-system,sans-serif}
+.serif{font-family:"Fraunces",Georgia,serif}
+</style>
+<rect width="1400" height="1100" fill="#FAFAF7"/>
+
+<!-- Corner stamps -->
+<text x="60" y="60" class="mono dim" font-size="11" letter-spacing="2.6">LIIE · UR 4264 / SCHÉMA 01</text>
+<text x="1340" y="60" class="mono dim" font-size="11" letter-spacing="1.8" text-anchor="end">48°23′ N · 05°24′ E</text>
+<text x="60" y="1050" class="serif mute" font-size="13" font-style="italic">fig. 01 — boucle translationnelle</text>
+<text x="1340" y="1050" class="mono dim" font-size="11" text-anchor="end">→ lecture dans le sens horaire</text>
+
+<!-- Ring -->
+<circle cx="700" cy="560" r="260" stroke="#0E1116" fill="none" stroke-width="1" opacity="0.18"/>
+
+<!-- Tick marks every 30° -->
+<g stroke="#0E1116" stroke-width="1" opacity="0.22">
+<line x1="700" y1="290" x2="700" y2="298"/>
+<line x1="830.00" y1="329.00" x2="826.00" y2="335.93"/>
+<line x1="925.08" y1="424.08" x2="918.15" y2="428.08"/>
+<line x1="970" y1="560" x2="962" y2="560"/>
+<line x1="925.08" y1="695.92" x2="918.15" y2="691.92"/>
+<line x1="830.00" y1="791.00" x2="826.00" y2="784.07"/>
+<line x1="700" y1="830" x2="700" y2="822"/>
+<line x1="570.00" y1="791.00" x2="574.00" y2="784.07"/>
+<line x1="474.92" y1="695.92" x2="481.85" y2="691.92"/>
+<line x1="430" y1="560" x2="438" y2="560"/>
+<line x1="474.92" y1="424.08" x2="481.85" y2="428.08"/>
+<line x1="570.00" y1="329.00" x2="574.00" y2="335.93"/>
+</g>
+
+<!-- Cardinal degree labels outside ring -->
+<text x="700" y="276" class="mono dim" font-size="11" letter-spacing="1.8" text-anchor="middle">000°</text>
+<text x="984" y="564" class="mono dim" font-size="11" letter-spacing="1.8">090°</text>
+<text x="700" y="852" class="mono dim" font-size="11" letter-spacing="1.8" text-anchor="middle">180°</text>
+<text x="416" y="564" class="mono dim" font-size="11" letter-spacing="1.8" text-anchor="end">270°</text>
+
+<!-- Continuous arc 12→3→6→9→12, accent cap at node 1 -->
+<path d="M 700 300 A 260 260 0 0 1 960 560 A 260 260 0 0 1 700 820 A 260 260 0 0 1 440 560 A 260 260 0 0 1 700 300"
+stroke="#0E1116" fill="none" stroke-width="1.5" opacity="0.45" stroke-linecap="round"/>
+<path d="M 700 300 A 260 260 0 0 1 718 300.6" stroke="#C84C38" fill="none" stroke-width="1.75" stroke-linecap="round"/>
+
+<!-- Arc midpoint captions (+090°) -->
+<text x="900" y="378" class="mono dim" font-size="10" opacity="0.8" letter-spacing="1.8">+ 090°</text>
+<text x="900" y="760" class="mono dim" font-size="10" opacity="0.8" letter-spacing="1.8">+ 090°</text>
+<text x="500" y="760" class="mono dim" font-size="10" opacity="0.8" letter-spacing="1.8" text-anchor="end">+ 090°</text>
+<text x="500" y="378" class="mono dim" font-size="10" opacity="0.8" letter-spacing="1.8" text-anchor="end">+ 090°</text>
+
+<!-- Typographic centerpiece -->
+<text x="700" y="548" class="serif ink" font-size="72" font-style="italic" text-anchor="middle" letter-spacing="-1.44" font-variation-settings="'SOFT' 100">du patient,</text>
+<line x1="570" y1="568" x2="830" y2="568" stroke="#0E1116" stroke-width="1" opacity="0.15"/>
+<text x="700" y="632" class="serif ink" font-size="72" font-style="italic" text-anchor="middle" letter-spacing="-1.44" font-variation-settings="'SOFT' 100">au patient.</text>
+
+<!-- ===== NODE 1 (top) — accent entry ===== -->
+<circle cx="700" cy="300" r="12" stroke="#C84C38" fill="none" stroke-width="1.25"/>
+<circle cx="700" cy="300" r="7" class="accent"/>
+<text x="700" y="188" class="mono mute" font-size="12" letter-spacing="2.4" text-anchor="middle" font-weight="500">ÉTAPE 01</text>
+<text x="700" y="226" class="serif ink" font-size="32" text-anchor="middle" font-weight="400">Problème clinique</text>
+<text x="700" y="254" class="sans mute" font-size="15" text-anchor="middle">Identifié au lit du patient, à l'hôpital de la Timone.</text>
+
+<!-- ===== NODE 2 (right) ===== -->
+<circle cx="960" cy="560" r="7" stroke="#0E1116" fill="none" stroke-width="1.5"/>
+<circle cx="960" cy="560" r="2" class="ink"/>
+<text x="992" y="526" class="mono mute" font-size="12" letter-spacing="2.4" font-weight="500">ÉTAPE 02</text>
+<text x="992" y="560" class="serif ink" font-size="32" font-weight="400">Question de recherche</text>
+<text x="992" y="588" class="sans mute" font-size="15">Formulée avec les cliniciens et traduite en</text>
+<text x="992" y="608" class="sans mute" font-size="15">hypothèse testable.</text>
+
+<!-- ===== NODE 3 (bottom) ===== -->
+<circle cx="700" cy="820" r="7" stroke="#0E1116" fill="none" stroke-width="1.5"/>
+<circle cx="700" cy="820" r="2" class="ink"/>
+<text x="700" y="890" class="mono mute" font-size="12" letter-spacing="2.4" text-anchor="middle" font-weight="500">ÉTAPE 03</text>
+<text x="700" y="928" class="serif ink" font-size="32" text-anchor="middle" font-weight="400">Projet scientifique</text>
+<text x="700" y="956" class="sans mute" font-size="15" text-anchor="middle">Conduit au laboratoire, sur le plateau LIIE / CERIMED.</text>
+
+<!-- ===== NODE 4 (left) ===== -->
+<circle cx="440" cy="560" r="7" stroke="#0E1116" fill="none" stroke-width="1.5"/>
+<circle cx="440" cy="560" r="2" class="ink"/>
+<text x="408" y="526" class="mono mute" font-size="12" letter-spacing="2.4" text-anchor="end" font-weight="500">ÉTAPE 04</text>
+<text x="408" y="560" class="serif ink" font-size="32" text-anchor="end" font-weight="400">Validation préclinique</text>
+<text x="408" y="588" class="sans mute" font-size="15" text-anchor="end">Évaluée avant retour en clinique</text>
+<text x="408" y="608" class="sans mute" font-size="15" text-anchor="end">et diffusion au patient.</text>
+</svg>
