@@ -300,7 +300,7 @@ const FINE = window.matchMedia('(pointer: fine)').matches;
 /* ================ 10. Clip-reveal sur images ================ */
 (function () {
   if (REDUCED) return;
-  const imgs = document.querySelectorAll('.card-thumb img, .news-thumb img, .figure-sci img, .hero-visual img, .project-hero img, .member-photo img');
+  const imgs = document.querySelectorAll('.news-thumb img, .figure-sci img, .hero-visual img, .project-hero img, .member-photo img');
   if (!('IntersectionObserver' in window)) return;
   imgs.forEach(img => img.classList.add('clip-reveal'));
   const io = new IntersectionObserver((entries) => {
