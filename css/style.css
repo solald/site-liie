@@ -968,6 +968,7 @@ a.card:hover .card-link { gap: 14px; color: var(--c-accent-l); }
 .member-avatar img {
   width: 100%; height: 100%;
   object-fit: cover;
+  object-position: center 20%;
   filter: brightness(0.9) contrast(1.05);
   transition: filter .4s, transform .6s;
 }
