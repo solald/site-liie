@@ -55,6 +55,9 @@ const FINE = window.matchMedia('(pointer: fine)').matches;
   if (REDUCED) return;
   const s = document.createElement('script');
   s.src = 'https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js';
+  s.integrity = 'sha384-B2WBjDzEjJpYvhmi2UyEn7rektqkf5suS6sNoyyrf0EBAwBHdkiXxIlU0V5Ru2ed';
+  s.crossOrigin = 'anonymous';
+  s.referrerPolicy = 'no-referrer';
   s.defer = true;
   s.onload = () => {
     if (!window.Lenis) return;
@@ -93,37 +96,73 @@ const FINE = window.matchMedia('(pointer: fine)').matches;
   document.head.appendChild(s);
 })();
 
-/* ================ 3. Menu mobile ================ */
+/* ================ 3. Menu mobile (avec focus trap + inert sur main) ================ */
 (function () {
   const toggle = document.querySelector('.nav-toggle');
   const links = document.querySelector('.nav-links');
+  const main = document.getElementById('main');
   if (!toggle || !links) return;
-  toggle.addEventListener('click', () => {
-    const isOpen = links.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', String(isOpen));
-  });
-  links.addEventListener('click', (e) => {
-    if (e.target.tagName === 'A' && window.innerWidth <= 900) {
-      links.classList.remove('open');
-      toggle.setAttribute('aria-expanded', 'false');
+
+  const focusableSelector = 'a[href], button:not([disabled])';
+  let lastFocused = null;
+
+  const setOpen = (open) => {
+    links.classList.toggle('open', open);
+    toggle.setAttribute('aria-expanded', String(open));
+    if (open) {
+      lastFocused = document.activeElement;
+      if (main && 'inert' in main) main.inert = true;
+      const first = links.querySelector(focusableSelector);
+      if (first) first.focus();
+    } else {
+      if (main && 'inert' in main) main.inert = false;
+      if (lastFocused && lastFocused.focus) lastFocused.focus();
     }
+  };
+
+  toggle.addEventListener('click', () => setOpen(!links.classList.contains('open')));
+
+  links.addEventListener('click', (e) => {
+    if (e.target.tagName === 'A' && window.innerWidth <= 900) setOpen(false);
+  });
+
+  // Focus trap + Escape
+  document.addEventListener('keydown', (e) => {
+    if (!links.classList.contains('open')) return;
+    if (e.key === 'Escape') { setOpen(false); return; }
+    if (e.key !== 'Tab') return;
+    const focusables = links.querySelectorAll(focusableSelector);
+    if (!focusables.length) return;
+    const first = focusables[0];
+    const last = focusables[focusables.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
   });
 })();
 
-/* ================ 4. Compteur PubMed ================ */
+/* ================ 4. Compteur PubMed (avec timeout + skeleton) ================ */
 (function () {
   const el = document.getElementById('pubmed-count');
   if (!el) return;
+  el.classList.add('is-loading');
+  el.setAttribute('aria-busy', 'true');
   const term = 'LIIE[Affiliation] OR "Laboratoire d\'Imagerie Interventionnelle Expérimentale"[Affiliation] OR "Interventional Imaging Laboratory"[Affiliation]';
   const url = 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&rettype=count&retmode=json&term=' + encodeURIComponent(term);
-  fetch(url, { cache: 'force-cache' })
+  const ctrl = new AbortController();
+  const timeoutId = setTimeout(() => ctrl.abort(), 5000);
+  fetch(url, { cache: 'force-cache', signal: ctrl.signal })
     .then(r => r.ok ? r.json() : Promise.reject(r.status))
     .then(data => {
       const n = data && data.esearchresult && parseInt(data.esearchresult.count, 10);
       if (Number.isFinite(n) && n > 0) el.textContent = n.toLocaleString('fr-FR');
       else el.textContent = '—';
     })
-    .catch(() => { el.textContent = '—'; });
+    .catch(() => { el.textContent = '—'; })
+    .finally(() => {
+      clearTimeout(timeoutId);
+      el.classList.remove('is-loading');
+      el.removeAttribute('aria-busy');
+    });
 })();
 
 /* ================ 5. Nav active ================ */

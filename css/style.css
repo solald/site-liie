@@ -4,7 +4,7 @@
    Direction : laboratoire de pointe, imagerie, embolisation
    ========================================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');
+/* Note : Inter, Fraunces & JetBrains Mono sont chargés via <link> dans le HTML (preconnect + display=swap, non-bloquant). */
 
 :root {
   /* ===== Palette "Clinical Paper" (laboratoire, clair, éditorial) ===== */
@@ -1482,9 +1482,107 @@ a.card:hover .card-link { gap: 14px; color: var(--c-accent-l); }
 .reveal-delay-3 { transition-delay: .3s; }
 .reveal-delay-4 { transition-delay: .4s; }
 
+/* ===== Fiche Directeur (layout dédié, plus large) ===== */
+.director-card {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: clamp(24px, 4vw, 48px);
+  align-items: start;
+  max-width: 920px;
+  margin: 0 auto var(--sp-8);
+  padding: clamp(24px, 4vw, 40px);
+  background: var(--c-bg);
+  border: 1px solid var(--c-line);
+  border-radius: 16px;
+  box-shadow: 0 1px 0 var(--c-bg-2), 0 24px 48px -32px rgba(14,17,22,.18);
+}
+.director-avatar img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+.director-eyebrow {
+  font-family: var(--f-mono);
+  font-size: .72rem;
+  text-transform: uppercase;
+  letter-spacing: .16em;
+  color: var(--c-accent);
+  margin: 0 0 var(--sp-2);
+}
+.director-name {
+  font-family: var(--f-serif);
+  font-size: clamp(1.6rem, 2.6vw, 2.1rem);
+  margin: 0 0 var(--sp-2);
+  line-height: 1.15;
+}
+.director-title {
+  font-family: var(--f-sans);
+  font-size: 1rem;
+  color: var(--c-ink-d);
+  margin: 0 0 var(--sp-2);
+}
+.director-affil {
+  font-size: .92rem;
+  color: var(--c-ink-mute);
+  margin: 0 0 var(--sp-4);
+  line-height: 1.55;
+}
+.director-bio {
+  font-size: .98rem;
+  color: var(--c-ink-d);
+  margin: 0 0 var(--sp-4);
+  line-height: 1.6;
+}
+.director-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+}
+.director-links a {
+  font-family: var(--f-mono);
+  font-size: .78rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  padding: 6px 12px;
+  border: 1px solid var(--c-line);
+  border-radius: 100px;
+  color: var(--c-ink-d);
+  text-decoration: none;
+  transition: background .15s ease, border-color .15s ease;
+}
+.director-links a:hover {
+  background: var(--c-bg-1);
+  border-color: var(--c-accent);
+  color: var(--c-accent);
+}
+@media (max-width: 720px) {
+  .director-card {
+    grid-template-columns: 1fr;
+    text-align: left;
+  }
+  .director-avatar { max-width: 200px; }
+}
+
+/* ===== Skeleton placeholder pour compteur PubMed ===== */
+#pubmed-count.is-loading {
+  display: inline-block;
+  min-width: 3ch;
+  background: linear-gradient(90deg, var(--c-bg-2) 25%, var(--c-bg-3) 50%, var(--c-bg-2) 75%);
+  background-size: 200% 100%;
+  color: transparent;
+  border-radius: 4px;
+  animation: pubmed-skeleton 1.4s ease-in-out infinite;
+}
+@keyframes pubmed-skeleton { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+@media (prefers-reduced-motion: reduce) {
+  #pubmed-count.is-loading { animation: none; opacity: .6; }
+}
+
 /* ===== A11y ===== */
 .skip-link {
-  position: absolute; left: -9999px; top: 8px;
+  position: absolute; top: 8px; left: 16px;
   background: var(--c-accent); color: var(--c-bg);
   padding: 10px 18px; border-radius: 100px;
   font-size: .82rem; font-weight: 600;
@@ -1492,13 +1590,31 @@ a.card:hover .card-link { gap: 14px; color: var(--c-accent-l); }
   font-family: var(--f-mono);
   text-transform: uppercase;
   letter-spacing: .08em;
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 .skip-link:focus {
-  left: 16px;
+  clip-path: none;
   outline: 2px solid var(--c-cyan);
   outline-offset: 3px;
   text-decoration: none;
 }
+
+/* Liens externes — icône ↗ discrète. Exclut .btn, .card-link, .card-project, .nav-links, footer logo, member-links, project-links */
+main a[target="_blank"]:not(.btn):not(.card-link):not(.card)::after {
+  content: " \2197";
+  font-size: .85em;
+  color: var(--c-ink-mute);
+  display: inline-block;
+  margin-left: .15em;
+  text-decoration: none;
+}
+.member-links a[target="_blank"]::after,
+.project-links a[target="_blank"]::after,
+.news-card a[target="_blank"]::after,
+.news-item a[target="_blank"]::after,
+.hero-meta a[target="_blank"]::after,
+.intro-statement a[target="_blank"]::after { content: ""; }
 :focus-visible {
   outline: 2px solid var(--c-accent);
   outline-offset: 3px;
