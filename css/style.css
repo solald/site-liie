@@ -388,10 +388,7 @@ hr { border:0; height:1px; background:var(--line); margin:var(--sp-7) 0; }
 .breadcrumb span { margin:0 .5rem; color:var(--dim); }
 
 /* ===== Prose — corps de texte des pages internes ===== */
-.prose { max-width:var(--maxw-text); }
-/* Pages-article (labo, mentions) : colonne de lecture centrée, en-tête aligné dessus */
-main.article .prose { margin-left:auto; margin-right:auto; }
-main.article .page-header > .container { max-width:var(--maxw-text); }
+.prose { max-width:none; }
 .prose h2 { margin-top:var(--sp-8); }
 .prose h2:first-child { margin-top:0; }
 .prose h3 { margin-top:var(--sp-6); color:var(--ink); }
