@@ -1,7 +1,7 @@
 /* =========================================================
    LIIE — v2 « Revue »
    Éditorial scientifique : clair, sobre, content-first.
-   Titres Fraunces · corps Inter · un seul accent rouge.
+   Titres Newsreader · corps Inter · un seul accent rouge.
    ========================================================= */
 
 :root {
@@ -32,7 +32,7 @@
   --p-iris:       #42818F;
 
   /* Typo */
-  --serif: "Fraunces", "Source Serif Pro", Georgia, serif;
+  --serif: "Newsreader", "Source Serif Pro", Georgia, serif;
   --sans:  "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
 
   /* Espacement */
@@ -558,8 +558,8 @@ hr { border:0; height:1px; background:var(--line); margin:var(--sp-7) 0; }
 .students-foot { margin-top:var(--sp-6); font-size:.88rem; color:var(--mute); text-align:center; }
 
 /* ===== Reveal au scroll ===== */
-.reveal { opacity:0; transform:translateY(18px); transition:opacity .7s ease, transform .7s cubic-bezier(.22,1,.36,1); }
-.reveal.is-in { opacity:1; transform:none; }
+.reveal { opacity:0; transition:opacity .5s ease; }
+.reveal.is-in { opacity:1; }
 @media (prefers-reduced-motion:reduce){
   .reveal { opacity:1 !important; transform:none !important; transition:none; }
   html { scroll-behavior:auto; }

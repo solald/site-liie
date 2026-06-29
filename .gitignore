@@ -4,3 +4,7 @@ Thumbs.db
 
 # Compagnon de brainstorm (local)
 .superpowers/
+
+# Dev / vérif (non déployé)
+deia_audit.py
+.deia_baseline.json
