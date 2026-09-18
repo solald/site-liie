@@ -319,6 +319,7 @@ hr { border:0; height:1px; background:var(--line); margin:var(--sp-7) 0; }
 }
 .news-item:first-child { border-top:1px solid var(--line); }
 .news-item:hover { padding-left:8px; }
+.news--nodate .news-item { grid-template-columns:1fr auto; }
 .news-date { font-size:.78rem; font-weight:600; letter-spacing:.06em; text-transform:uppercase; color:var(--mute); }
 .news-main h3 { font-size:clamp(1.15rem,1.7vw,1.4rem); margin-bottom:6px; }
 .news-main h3 a { color:var(--ink); }
@@ -344,7 +345,7 @@ hr { border:0; height:1px; background:var(--line); margin:var(--sp-7) 0; }
 
 /* ===== Footer ===== */
 .site-footer { background:var(--paper); border-top:1px solid var(--line); padding:clamp(56px,7vw,80px) 0 36px; font-size:.9rem; }
-.footer-grid { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:40px; margin-bottom:48px; }
+.footer-grid { display:grid; grid-template-columns:2fr 1fr 1fr; gap:40px; margin-bottom:48px; }
 @media (max-width:880px){ .footer-grid { grid-template-columns:1fr 1fr; gap:32px; } }
 @media (max-width:520px){ .footer-grid { grid-template-columns:1fr; } }
 .footer-logo { height:48px; width:auto; margin-bottom:var(--sp-4); }
@@ -544,7 +545,7 @@ hr { border:0; height:1px; background:var(--line); margin:var(--sp-7) 0; }
 .student-year { font-size:.78rem; font-weight:600; color:var(--red); font-variant-numeric:tabular-nums; line-height:1.5; }
 .student-body p { margin:0; }
 .student-name { font-weight:600; color:var(--ink); margin-bottom:2px !important; }
-.student-name .defended { font-size:.62rem; font-weight:600; text-transform:uppercase; letter-spacing:.08em; color:var(--mute); border:1px solid var(--line-2); border-radius:100px; padding:1px 8px; margin-left:8px; }
+.student-name .defended { font-size:.68rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--red); border:1px solid var(--red); border-radius:100px; padding:1px 8px; margin-left:8px; }
 .student-subject { font-size:.9rem; color:var(--ink-2); margin-bottom:3px !important; }
 .student-sup { font-size:.8rem; color:var(--mute); margin-bottom:4px !important; }
 .student-links { display:flex; gap:12px; font-size:.74rem; font-weight:500; }
