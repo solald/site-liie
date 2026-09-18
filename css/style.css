@@ -234,7 +234,7 @@ hr { border:0; height:1px; background:var(--line); margin:var(--sp-7) 0; }
 
 /* Credentials — barre de données discrète */
 .credentials {
-  display:grid; grid-template-columns:repeat(3,1fr);
+  display:grid; grid-template-columns:repeat(4,1fr);
   border-top:1px solid var(--line);
   margin-top:clamp(26px,4vw,44px);
   padding-top:var(--sp-5);
