@@ -57,7 +57,6 @@
       <a href="index.html">Accueil</a><span>›</span>Le laboratoire
     </nav>
     <h1>Un laboratoire dédié aux thérapeutiques guidées par l'imagerie</h1>
-    <p class="lead">Unité de recherche d'<a href="https://www.univ-amu.fr" target="_blank" rel="noopener noreferrer">Aix-Marseille Université</a> (UR 4264), intégrée à la plateforme <a href="https://www.cerimed-web.eu" target="_blank" rel="noopener noreferrer">CERIMED</a> dès son inauguration, sur le campus hospitalo-universitaire de la Timone.</p>
   </div>
 </section>
 
@@ -65,23 +64,45 @@
   <div class="container">
     <div class="prose">
 
-      <div class="keypoints">
-        <h4>L'essentiel</h4>
-        <ul>
-          <li>Unité de recherche <strong>UR 4264</strong> à tutelle unique d'Aix-Marseille Université, en lien étroit avec l'AP-HM.</li>
-          <li>Hébergée par la plateforme <strong>CERIMED</strong> au CHU de la Timone, dont le LIIE pilote le secteur radiologique.</li>
-          <li>Mission : concevoir, évaluer et faire adopter les thérapeutiques guidées par l'imagerie, de la recherche préclinique au patient.</li>
-          <li>Domaines : embolisation, ablation et oncologie interventionnelle, transplantation hépatique &amp; machines de perfusion, imagerie multimodale, dans une boucle « du patient au laboratoire et retour au patient ».</li>
-        </ul>
-      </div>
-
       <h2>Identité et missions</h2>
       <p>Le Laboratoire d'Imagerie Interventionnelle Expérimentale (LIIE) est une <strong>unité de recherche</strong> affiliée à <a href="https://www.univ-amu.fr" target="_blank" rel="noopener noreferrer">Aix-Marseille Université</a>, en lien étroit avec l'<a href="https://fr.ap-hm.fr" target="_blank" rel="noopener noreferrer">Assistance publique-Hôpitaux de Marseille</a>. Il a intégré la plateforme <a href="https://www.cerimed-web.eu" target="_blank" rel="noopener noreferrer">CERIMED</a> dès son inauguration, dans un bâtiment créé pour l'accueillir sur le campus hospitalo-universitaire de la Timone.</p>
-      <p>Sa mission : <em>concevoir, évaluer et faire adopter</em> les <strong>thérapeutiques guidées par l'imagerie</strong>. Tous les travaux s'inscrivent dans une boucle translationnelle, du patient au laboratoire et retour au patient.</p>
 
-      <figure class="figure-sci">
-        <img src="assets/images/schema-cycle-translationnel.svg" alt="Schéma de la boucle translationnelle du LIIE : problème clinique, question de recherche, projet scientifique, validation préclinique, puis retour au patient." loading="lazy" decoding="async">
-        <figcaption><span class="fig-num">Figure</span>La boucle translationnelle du LIIE, en quatre étapes reliant la clinique au laboratoire et inversement.</figcaption>
+      <figure class="figure-sci schema-loop">
+        <svg viewBox="0 0 1240 400" role="img" aria-labelledby="schemaTitle schemaDesc">
+          <title id="schemaTitle">Boucle translationnelle du LIIE</title>
+          <desc id="schemaDesc">Quatre étapes en boucle : problème clinique identifié au lit du patient, question de recherche formulée avec les cliniciens, projet scientifique conduit au laboratoire, validation préclinique sur le plateau CERIMED, puis retour au patient.</desc>
+          <defs>
+            <marker id="sl-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto"><path d="M0 0 L10 5 L0 10 Z" style="fill:var(--ink)"/></marker>
+            <marker id="sl-arrow-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto"><path d="M0 0 L10 5 L0 10 Z" style="fill:var(--red)"/></marker>
+          </defs>
+          <g text-anchor="middle" style="font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:.18em;fill:var(--mute)">
+            <text x="165" y="64" style="fill:var(--red)">01</text><text x="470" y="64">02</text><text x="775" y="64">03</text><text x="1080" y="64">04</text>
+          </g>
+          <g style="stroke:var(--ink);stroke-width:1.5;fill:none">
+            <line x1="184" y1="112" x2="446" y2="112" marker-end="url(#sl-arrow)"/>
+            <line x1="489" y1="112" x2="751" y2="112" marker-end="url(#sl-arrow)"/>
+            <line x1="794" y1="112" x2="1056" y2="112" marker-end="url(#sl-arrow)"/>
+          </g>
+          <g style="fill:var(--paper);stroke:var(--ink);stroke-width:2">
+            <circle cx="165" cy="112" r="11" style="fill:var(--red);stroke:var(--red)"/>
+            <circle cx="470" cy="112" r="11"/><circle cx="775" cy="112" r="11"/><circle cx="1080" cy="112" r="11"/>
+          </g>
+          <g text-anchor="middle" style="font-family:var(--serif);font-size:27px;font-weight:500;fill:var(--ink)">
+            <text x="165" y="172">Problème clinique</text>
+            <text x="470" y="172">Question de recherche</text>
+            <text x="775" y="172">Projet scientifique</text>
+            <text x="1080" y="172">Validation préclinique</text>
+          </g>
+          <g text-anchor="middle" style="font-family:var(--sans);font-size:15px;fill:var(--mute)">
+            <text x="165" y="202">identifié au lit du patient</text>
+            <text x="470" y="202">formulée avec les cliniciens</text>
+            <text x="775" y="202">conçu et conduit au LIIE</text>
+            <text x="1080" y="202">sur le plateau CERIMED</text>
+          </g>
+          <path d="M1080 230 V300 Q1080 322 1058 322 H187 Q165 322 165 300 V236" style="fill:none;stroke:var(--red);stroke-width:1.5" marker-end="url(#sl-arrow-red)"/>
+          <text x="622" y="366" text-anchor="middle" style="font-family:var(--serif);font-style:italic;font-size:24px;fill:var(--red)">retour au patient</text>
+        </svg>
+        <figcaption><span class="fig-num">Figure</span>La boucle translationnelle du LIIE : quatre étapes, de la clinique au laboratoire, et retour au patient.</figcaption>
       </figure>
 
       <h2 id="axes">Thématique de recherche</h2>
@@ -192,7 +213,8 @@
           <strong>LIIE · CERIMED</strong>
           Faculté de la Timone · 27, bd Jean Moulin<br>13385 Marseille Cedex 05<br>
           <a href="tel:+33491324171">+33 (0)4 91 32 41 71</a><br>
-          <a class="em" href="mailto:cerimed-contact@univ-amu.fr">cerimed-contact@univ-amu.fr</a>
+          <a class="em" href="mailto:cerimed-contact@univ-amu.fr">cerimed-contact@univ-amu.fr</a><br>
+          <a href="https://www.google.com/maps/search/?api=1&amp;query=Facult%C3%A9+de+M%C3%A9decine+de+la+Timone%2C+27+boulevard+Jean+Moulin%2C+13385+Marseille" target="_blank" rel="noopener noreferrer">Plan d'accès</a>
         </address>
       </div>
       <div>

@@ -234,7 +234,7 @@ hr { border:0; height:1px; background:var(--line); margin:var(--sp-7) 0; }
 
 /* Credentials — barre de données discrète */
 .credentials {
-  display:grid; grid-template-columns:repeat(4,1fr);
+  display:grid; grid-template-columns:repeat(3,1fr);
   border-top:1px solid var(--line);
   margin-top:clamp(26px,4vw,44px);
   padding-top:var(--sp-5);
@@ -267,7 +267,7 @@ hr { border:0; height:1px; background:var(--line); margin:var(--sp-7) 0; }
 .editorial .lead { max-width:60ch; }
 
 /* « L'essentiel » — chiffres-clés scannables */
-.facts { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--sp-5); margin-top:var(--sp-7); }
+.facts { display:grid; grid-template-columns:repeat(2,1fr); gap:var(--sp-5); margin-top:var(--sp-7); }
 .fact { border-top:2px solid var(--ink); padding-top:var(--sp-4); }
 .fact b { display:block; font-family:var(--serif); font-size:clamp(1.6rem,2.4vw,2.1rem); color:var(--ink); font-weight:500; letter-spacing:-.02em; margin-bottom:6px; }
 .fact span { font-size:.95rem; color:var(--mute); }
@@ -486,6 +486,7 @@ hr { border:0; height:1px; background:var(--line); margin:var(--sp-7) 0; }
 .figure-sci img { width:100%; display:block; border-bottom:1px solid var(--line); }
 /* Les SVG sans dimensions intrinsèques (Chrome les voit 0×0) s'effondreraient : on force le ratio du viewBox */
 .figure-sci img[src$=".svg"] { height:auto; aspect-ratio:1400 / 1100; background:#fff; }
+.figure-sci svg { display:block; width:100%; height:auto; padding:22px 14px 6px; box-sizing:border-box; border-bottom:1px solid var(--line); }
 .figure-sci figcaption { padding:14px 20px; font-size:.84rem; color:var(--mute); line-height:1.55; }
 .figure-sci .fig-num { font-weight:600; color:var(--ink); text-transform:uppercase; letter-spacing:.08em; font-size:.7rem; margin-right:8px; }
 
